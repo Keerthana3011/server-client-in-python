@@ -1,0 +1,11 @@
+import socket
+s=socket.socket()
+print("server created")
+s.bind(('localhost',9992))
+s.listen(3)
+print('waiting for connection')
+c,addr=s.accept()
+print(addr)
+recvdmsg=c.recv(1024).decode()
+print(recvdmsg)
+c.close()
